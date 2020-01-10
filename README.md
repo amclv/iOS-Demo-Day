@@ -24,7 +24,7 @@
 
 ## Hero Image
 
-`<https://ibb.co/1GtRvsd>`
+`https://ibb.co/1GtRvsd`
 
 ## Questions (Answer indented below)
 
