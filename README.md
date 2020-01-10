@@ -19,8 +19,8 @@
 * Github Code: `https://github.com/amclv/Inside-Mortgage-Calculator`
 * Github Proposal: `https://github.com/amclv/ios-build-sprint-project-proposal`
 * Trello/Github Project Kanban: `https://trello.com/b/ccWc1xR5/home-mortgage-calculator`
+* YouTube demo video (Recommended): `https://www.youtube.com/watch?v=N3X7UqwrG-s`
 * Test Flight Signup (Recommended): `insert beta signup link here`
-* YouTube demo video (Recommended): `insert video url here`
 
 ## Hero Image
 
