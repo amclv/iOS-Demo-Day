@@ -16,41 +16,54 @@
 
 ## Links
 
-* Github Code: `<insert Github repository link here>`
-* Github Proposal: `<insert Proposal Pull Request here>`
-* Trello/Github Project Kanban: `<insert trello board here>`
+* Github Code: `<https://github.com/amclv/Inside-Mortgage-Calculator>`
+* Github Proposal: `<https://github.com/amclv/ios-build-sprint-project-proposal>`
+* Trello/Github Project Kanban: `<https://trello.com/b/ccWc1xR5/home-mortgage-calculator>`
 * Test Flight Signup (Recommended): `<insert beta signup link here>`
 * YouTube demo video (Recommended): `<insert video url here>`
 
 ## Hero Image
 
-`<Post one screenshot in an iPhone Simulator frame or an iPhone 11 Pro render using placeit.com>`
+`<https://ibb.co/1GtRvsd>`
 
 ## Questions (Answer indented below)
 
 1. What was your favorite feature to implement? Why?
 
-    `<Your answer here>`
+    `Definitely has to be the math portion, something that may seem easy but math in code is definitely a little more challenging on the brain!`
 
 2. What was your #1 obstacle or bug that you fixed? How did you fix it?
 
-    `<Your answer here>`
+    `The calculation for monthly payments. As I was working on them I kept getting 1.8333% rate when it was supposed to be 1.00833% rate. After constantly thinking and stepping away from the computer and messing with rate calculations on my phone. I realize that the calculation was missing one important thing...dividing by 100. Than came the power to the negative portion!`
   
 3. Share a chunk of code (or file) you're proud of and explain why.
 
-    `<Your answer here>`
+    `This portion of my code was using power negative to the term life which can be negative to the 180 or 360 power.`
+    ```
+    func createMonthlyPayments(with homePrice: Double?, downPay: Double?, annualRate: Double?, termLife: Double?) -> String {
+        guard let unwrapHomePrice = homePrice,
+            let unwrapDownPayment = downPay,
+            let unwrapAnnualRate = annualRate,
+            let unwrapTerm = termLife else { return "0" }
+        
+        let annualRate = max(0.00001, unwrapAnnualRate)
+        let principle = unwrapHomePrice - unwrapDownPayment
+        return currencyFormatter(xxx: Double(principle * ((annualRate/100) / 12)) / (1 - pow(1+((annualRate/100)/12), -unwrapTerm)))
+    }
+    ```
   
 4. What is your elevator pitch? (30 second description your Grandma or a 5-year old would understand)
 
-    `<Your answer here>`
+    `I hear your trying to buy a house! You don't know where to start? Well..check out this elegant app!`
+    `Don't know if you can afford a house? I understand, it can make your life stressful. Try this app out it! It will show you your monthly payments at a specific rate and help determine which house to buy.`
   
 5. What is your #1 feature?
 
-    `<Your answer here>`
+    `If I could use API calls, it would of been the Rates Tableview that displays current days mortgage rates based off banks. But for now I would say the calculater!`
   
 6. What are you future goals?
 
-    `<Your answer here>`
+    `I would like to get a graph or some type of a better visual to engage the users. Be able to use an API call to get current date mortgage rates.`
 
 ## Required Slides (Add your Keynote to your PR)
 
